@@ -1,0 +1,26 @@
+<?php helper('url'); ?>
+
+<h1>Full Task List</h1>
+
+<nav>
+    <a href="<?= site_url('/') ?>">Welcome</a> |
+    <a href="<?= site_url('tasks') ?>">Task List</a> |
+    <a href="<?= site_url('profile') ?>">Profile</a> |
+    <a href="<?= site_url('about') ?>">About</a>
+</nav>
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Task Date</th>
+    </tr>
+
+    <?php foreach ($tasks as $task): ?>
+        <tr>
+            <td><?= esc($task['title']) ?></td>
+            <td><?= esc($task['status']) ?></td>
+            <td><?= esc($task['task_date']) ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
